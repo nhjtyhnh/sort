@@ -12,10 +12,12 @@ void fast_sort(int a1[], int left, int right) {
 	}
 	int pivot = a1[left];
 	int k = left;
-	for (int i = left+1;i < right;i++) {
+	for (int i = left+1;i <= right;i++) {
 		if (a1[i] < pivot) {
 			k++;
-			exchange(&a1[i], &a1[k]);
+			if(k!=i){
+				exchange(&a1[i], &a1[k]);
+			}
 		}
 	}
 	exchange(&a1[left], &a1[k]);
